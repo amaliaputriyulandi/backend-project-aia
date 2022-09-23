@@ -6,8 +6,7 @@ const Op = db.Sequelize.Op
 method.findAll = async (req, res) => {
     try{
         const name = req.query.name
-        var condition = name ? { todoName: {[Op.iLike]: `%${name}`}}: null
-
+        var condition = name ? { todoName: {[Op.iLike]: `%${name}%`}}: null
         const data = await Todo.findAll({where: condition})
 
         res.send({
