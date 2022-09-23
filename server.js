@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true}))
 db.sequelize.sync();
 
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to my application"})
+    res.json({ message: "Welcome to my application todo simple"})
 })
 
 // include routes
