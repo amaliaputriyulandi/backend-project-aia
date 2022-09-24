@@ -1,17 +1,10 @@
-// const router = require("express").Router()
-// const todo = require("../controllers/todoController")
-
-// router.get("/", todo.findAll)
-
-// // router.use('/api/todo', router);
-
-// module.exports = router
-
 module.exports = app => {
     const todo = require("../controllers/todoController");
+    const validate = require("../middlewares/validateRequest")
     var router = require("express").Router();
 
     router.get("/", todo.findAll);
+    router.post("/create", todo.create)
     
     app.use('/api/todo', router);
 };

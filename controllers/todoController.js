@@ -24,6 +24,43 @@ method.findAll = async (req, res) => {
 method.create = async (req, res) => {
     try{
 
+        const dataReq = req.body
+        const newTodo = {
+            todoName: dataReq.todoName,
+            todoDescription: dataReq.todoDescription,
+            todoIsComplete: dataReq.todoIsComplete
+        }
+
+        const saveData = await Todo.create(newTodo)
+
+        res.send({
+            statusCode: 200,
+            statusText: "success",
+            message: "Your request for Create todo successfully",
+            data: {
+                todoName: dataReq.todoName,
+                todoDescription: dataReq.todoDescription,
+                todoIsComplete: dataReq.todoIsComplete
+            }
+        })
+        
+    }catch(error){
+        res.status(500).send(error)
+    }
+}
+
+method.update = async (req, res) => {
+    try{
+
+
+    }catch(error){
+
+    }
+}
+
+method.delete = async (req, res) => {
+    try{
+
 
     }catch(error){
 
