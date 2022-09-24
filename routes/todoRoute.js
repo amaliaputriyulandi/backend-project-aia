@@ -1,6 +1,5 @@
 module.exports = app => {
     const todo = require("../controllers/todoController");
-    const validate = require("../middlewares/validateRequest")
     var router = require("express").Router();
 
     router.get("/", todo.findAll);
