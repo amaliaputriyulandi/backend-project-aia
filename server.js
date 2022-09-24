@@ -17,10 +17,8 @@ app.get("/", (req, res) => {
 })
 
 // include routes
-// const todoRoute = require("./routes/todoRoute")(app)
-// app.use('/api/todo', todoRoute)
-
 require("./routes/todoRoute")(app)
+require("./routes/photoRoute")(app)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
